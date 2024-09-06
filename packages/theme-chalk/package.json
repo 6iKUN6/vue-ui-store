@@ -1,0 +1,11 @@
+{
+  "name": "@vue-ui-store/theme-chalk",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

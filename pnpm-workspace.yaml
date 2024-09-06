@@ -1,0 +1,5 @@
+packages:
+  - 'packages/**'
+  - docs #文档
+  - play #测试
+

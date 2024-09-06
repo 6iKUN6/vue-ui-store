@@ -1,0 +1,138 @@
+@use './mixins/mixins.scss' as *;
+@use 'common/var' as *;
+
+$border-radius-var: 4px;
+
+@include b(input) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s; // 添加过渡效果
+
+  @include e(wrapper) {
+    display: inline-flex;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: $border-radius-var;
+    box-sizing: border-box;
+    flex: 1;
+    align-items: center;
+    vertical-align: middle;
+    transition:
+      border-color 0.3s,
+      box-shadow 0.3s; // 添加过渡效果
+    // Webkit
+    input[type='password'] {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    // IE和Edge
+    input[type='password']::-ms-reveal {
+      display: none;
+    }
+    @include when(prepend) {
+      border-top-left-radius: 0; // 添加左侧弧度
+      border-bottom-left-radius: 0; // 添加左侧弧度
+    }
+    @include when(append) {
+      border-top-right-radius: 0; // 添加右侧弧度
+      border-bottom-right-radius: 0; // 添加右侧弧度
+    }
+    &:hover {
+      border-color: darken(#ccc, 10%); // 鼠标悬停时边框颜色变深
+    }
+
+    &:focus-within {
+      border-color: $color-primary; // 聚焦时边框颜色变为主题色
+      box-shadow: 0 0 0 2px lighten($color-primary, 30%); // 聚焦时显示阴影
+    }
+  }
+  @include e('eye-icon') {
+    lineheight: 16px;
+    font-weight: bold;
+  }
+  @include e('clear-icon') {
+    lineheight: 16px;
+    font-weight: bold;
+  }
+
+  @include e(suffix) {
+    display: inline-flex;
+    margin-right: 5px;
+    background-color: transparent;
+  }
+
+  @include e(prefix) {
+    display: inline-flex;
+    margin-left: 5px;
+    background-color: transparent;
+  }
+
+  @include e(inner) {
+    display: inline-flex;
+    outline: none;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    padding: 0 10px;
+    width: 100%;
+    height: 30px;
+    transition:
+      background-color 0.3s,
+      border-color 0.3s; // 添加过渡效果
+
+    // &:hover {
+    //   background-color: #f8f8f8; // 鼠标悬停时背景颜色变浅
+    // }
+
+    &:focus {
+      outline: none; // 移除默认的聚焦轮廓
+      border-color: $color-primary; // 聚焦时边框颜色变为主题色
+    }
+  }
+}
+
+@include b(input-group) {
+  @include e(append) {
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    vertical-align: middle;
+    margin-left: -1px;
+    border-top-right-radius: $border-radius-var; // 添加右侧弧度
+    border-bottom-right-radius: $border-radius-var; // 添加右侧弧度
+    box-shadow:
+      0 0 0 1px #ccc inset,
+      0 1px 0 0 #ccc inset,
+      0 -1px 0 0 #ccc inset;
+    transition: background-color 0.3s; // 添加过渡效果
+
+    &:hover {
+      background-color: #f8f8f8; // 鼠标悬停时背景颜色变浅
+      cursor: pointer; // 显示指针手型
+    }
+  }
+
+  @include e(prepend) {
+    display: inline-flex;
+    padding: 0 10px;
+    line-height: 32px;
+    vertical-align: middle;
+    margin-right: -1px;
+    border-top-left-radius: $border-radius-var; // 添加左侧弧度
+    border-bottom-left-radius: $border-radius-var; // 添加左侧弧度
+    box-shadow:
+      1px 0 0 0 #ccc inset,
+      0 1px 0 0 #ccc inset,
+      0 -1px 0 0 #ccc inset;
+    transition: background-color 0.3s; // 添加过渡效果
+
+    &:hover {
+      background-color: #f8f8f8; // 鼠标悬停时背景颜色变浅
+      cursor: pointer; // 显示指针手型
+    }
+  }
+}

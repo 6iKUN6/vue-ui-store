@@ -1,0 +1,10 @@
+@use 'mixins/mixins.scss' as *;
+
+@include b(upload) {
+  display: inline-flex;
+  width: fit-content;
+  height: fit-content;
+  @include e(input) {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+@use 'mixins/mixins.scss' as *;
+
+@include b('checkbox') {
+  vertical-align: middle;
+  @include e('input') {
+  }
+  @include e('label') {
+  }
+}

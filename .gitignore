@@ -1,0 +1,7 @@
+node_modules
+dist
+packages/theme-chalk/dist
+packages/components/dist
+packages/utils/es
+packages/utils/lib
+docs/.vitepress
