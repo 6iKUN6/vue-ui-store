@@ -10,7 +10,7 @@ import importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config({
   // tseslint.config添加了extends扁平函数，直接用。否则是eslint9.0版本是没有extends的
-  ignores: ['**/node_modules/**', '**/dist/**'],
+  ignores: ['**/node_modules/**', '**/dist/**', '**/es/**', '**/lib/**'],
   extends: [
     eslint.configs.recommended,
     ...tseslint.configs.recommended,
