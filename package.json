@@ -1,6 +1,6 @@
 {
-  "name": "sp-ui",
-  "private": true,
+  "name": "sp-ui-store",
+  "private": false,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,9 @@
     "doc:dev": "pnpm -C docs dev",
     "lint": "eslint {packages/**/*,play/**/*}.{js,ts,jsx,tsx,vue}",
     "lint:fix": "eslint {packages/**/*,play/**/*}.{js,ts,jsx,tsx,vue} --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "release": "release-it",
+    "publish": "gulp -f scripts/publish.ts"
   },
   "keywords": [],
   "author": "sparkle",
@@ -26,6 +28,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/6iKUN6/vue-ui-store"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.1",
     "@types/gulp": "^4.0.17",
@@ -54,6 +60,7 @@
     "gulp-sass": "^5.0.0",
     "gulp-typescript": "6.0.0-alpha.1",
     "mockjs": "^1.1.0",
+    "release-it": "^17.6.0",
     "sass": "^1.43.2",
     "sucrase": "^3.35.0",
     "typescript-eslint": "^8.0.1",
