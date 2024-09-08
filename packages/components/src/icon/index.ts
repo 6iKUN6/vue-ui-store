@@ -1,5 +1,5 @@
 // 整合、导出组件
-import { withInstall } from '@vue-ui-store/utils/with-install';
+import { withInstall } from '@sp-ui/utils/with-install';
 
 import _Icon from './src/icon.vue';
 const Icon = withInstall(_Icon);

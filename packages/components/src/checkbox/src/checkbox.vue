@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { createNamespace } from '@vue-ui-store/utils/create';
+import { createNamespace } from '@sp-ui/utils/create';
 import { computed, onMounted, ref, watch } from 'vue';
 
 import { checkboxEmits, checkboxProps } from './checkbox';

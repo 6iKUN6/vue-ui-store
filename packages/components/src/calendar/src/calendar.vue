@@ -43,7 +43,7 @@ import { computed, ref } from 'vue';
 import dayjs from 'dayjs';
 import type { Dayjs } from 'dayjs';
 // import 'dayjs/locale/zh-cn';
-import { createNamespace } from '@vue-ui-store/utils';
+import { createNamespace } from '@sp-ui/utils';
 
 import {
   CalendarDateType,

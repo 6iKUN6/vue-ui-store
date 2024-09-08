@@ -1,4 +1,4 @@
-import { ExtractPropTypes, PropType, readonly } from 'vue';
+import { ExtractPropTypes, PropType } from 'vue';
 /* 
 所需props
 type 输入框类型

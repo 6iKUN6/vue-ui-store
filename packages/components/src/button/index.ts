@@ -1,4 +1,4 @@
-import { withInstall } from '@vue-ui-store/utils/with-install';
+import { withInstall } from '@sp-ui/utils/with-install';
 
 import _Button from './src/button.vue';
 

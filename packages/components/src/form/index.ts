@@ -1,4 +1,4 @@
-import { withInstall } from '@vue-ui-store/utils/with-install.js';
+import { withInstall } from '@sp-ui/utils/with-install.js';
 
 import _Form from './src/form.vue';
 import _FormItem from './src/form-item.vue';

@@ -7,7 +7,7 @@ import {
   ref,
   watch
 } from 'vue';
-import { createNamespace } from '@vue-ui-store/utils/create';
+import { createNamespace } from '@sp-ui/utils/create';
 
 export const virtualProps = {
   size: {

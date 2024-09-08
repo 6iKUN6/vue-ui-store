@@ -1,5 +1,5 @@
 import { defineComponent, onBeforeMount, ref } from 'vue';
-import { createNamespace } from '@vue-ui-store/utils';
+import { createNamespace } from '@sp-ui/utils';
 
 import VirtualItem from './virtual-item';
 import { RangeOptions, virtualScrollProps } from './virtual-props';

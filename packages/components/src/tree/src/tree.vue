@@ -25,9 +25,9 @@
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref, useSlots, watch } from 'vue';
-import SpVirtualList from '../../virtual-list';
-import { createNamespace } from '@vue-ui-store/utils/create';
+import { createNamespace } from '@sp-ui/utils/create';
 
+import SpVirtualList from '../../virtual-list';
 import {
   Key,
   treeEmits,

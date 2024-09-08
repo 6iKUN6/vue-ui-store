@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { createNamespace } from '@vue-ui-store/utils/create';
+import { createNamespace } from '@sp-ui/utils/create';
 
 import UploadDragger from './upload-dragger.vue';
 import { genId, UploadRawFile } from './upload';

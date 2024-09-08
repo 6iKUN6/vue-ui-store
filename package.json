@@ -1,5 +1,5 @@
 {
-  "name": "vue-ui-store",
+  "name": "sp-ui",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -14,15 +14,18 @@
     "format": "prettier --write ."
   },
   "keywords": [],
-  "author": "",
+  "author": "sparkle",
   "license": "ISC",
   "dependencies": {
-    "@vue-ui-store/components": "workspace:*",
-    "@vue-ui-store/theme-chalk": "workspace:*",
-    "@vue-ui-store/utils": "workspace:*",
+    "@sp-ui/components": "workspace:*",
+    "@sp-ui/theme-chalk": "workspace:*",
+    "@sp-ui/utils": "workspace:*",
     "typescript": "^5.5.4",
     "vue": "^3.4.35"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.1",
     "@types/gulp": "^4.0.17",

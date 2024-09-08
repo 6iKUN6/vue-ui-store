@@ -28,9 +28,9 @@
 
 <script setup lang="ts">
 import { useSlots } from 'vue';
-import { createNamespace } from '@vue-ui-store/utils/create';
-import LoadingComp from '@vue-ui-store/components/src/internal-icon/Loading';
-import SpIcon from '@vue-ui-store/components/src/icon';
+import { createNamespace } from '@sp-ui/utils/create';
+import LoadingComp from '@sp-ui/components/src/internal-icon/Loading';
+import SpIcon from '@sp-ui/components/src/icon';
 
 import { buttonEmits, buttonProps } from './button';
 

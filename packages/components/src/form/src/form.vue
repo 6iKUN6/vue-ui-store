@@ -6,8 +6,8 @@
 
 <script setup lang="ts">
 import { provide } from 'vue';
-import AsyncValidator, { Values } from 'async-validator';
-import { createNamespace } from '@vue-ui-store/utils/create';
+import type { Values } from 'async-validator';
+import { createNamespace } from '@sp-ui/utils/create';
 
 import { FormContext, formContextKey, formProps } from './form';
 import { FormItemContext } from './form-item';
@@ -32,6 +32,7 @@ const validate = async (cb?: (valid: boolean, fields?: Values) => void) => {
       };
     }
   }
+
   //返回cb的执行结构
   if (Object.keys(errors).length === 0) {
     return cb && cb(true);

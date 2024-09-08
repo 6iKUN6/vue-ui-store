@@ -7,7 +7,7 @@ import {
   ref,
   watch
 } from 'vue';
-import { createNamespace } from '@vue-ui-store/utils/create';
+import { createNamespace } from '@sp-ui/utils/create';
 
 import { inputEmits, inputProps } from './input';
 import { formItemContextKey } from '../../form';

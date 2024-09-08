@@ -33,7 +33,7 @@ import {
   useSlots
 } from 'vue';
 import AsyncValidator, { Values } from 'async-validator';
-import { createNamespace } from '@vue-ui-store/utils/create';
+import { createNamespace } from '@sp-ui/utils/create';
 
 import {
   Arrayable,

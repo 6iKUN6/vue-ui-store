@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { UploadRawFile } from '@vue-ui-store/components/upload';
+import { UploadRawFile } from '@sp-ui/components/src/upload';
 
 const handleBeforeUpload = (rawFile: UploadRawFile) => {
   console.log('handleBeforeUpload', rawFile);

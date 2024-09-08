@@ -1,4 +1,4 @@
-import { withInstall } from '@vue-ui-store/utils';
+import { withInstall } from '@sp-ui/utils';
 
 import _Calendar from './src/calendar.vue';
 

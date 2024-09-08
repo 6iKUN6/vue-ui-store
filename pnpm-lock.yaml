@@ -8,13 +8,13 @@ importers:
 
   .:
     dependencies:
-      '@vue-ui-store/components':
+      '@sp-ui/components':
         specifier: workspace:*
         version: link:packages/components
-      '@vue-ui-store/theme-chalk':
+      '@sp-ui/theme-chalk':
         specifier: workspace:*
         version: link:packages/theme-chalk
-      '@vue-ui-store/utils':
+      '@sp-ui/utils':
         specifier: workspace:*
         version: link:packages/utils
       typescript:
