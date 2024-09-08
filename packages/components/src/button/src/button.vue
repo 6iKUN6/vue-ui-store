@@ -29,8 +29,8 @@
 <script setup lang="ts">
 import { useSlots } from 'vue';
 import { createNamespace } from '@vue-ui-store/utils/create';
-import LoadingComp from '@vue-ui-store/components/internal-icon/Loading';
-import SpIcon from '@vue-ui-store/components/icon';
+import LoadingComp from '@vue-ui-store/components/src/internal-icon/Loading';
+import SpIcon from '@vue-ui-store/components/src/icon';
 
 import { buttonEmits, buttonProps } from './button';
 
@@ -39,7 +39,7 @@ defineOptions({
   name: 'sp-button',
   inheritAttrs: false //默认不继承外部传入的自定义属性
 });
-const props = defineProps(buttonProps);
+defineProps(buttonProps);
 const emits = defineEmits(buttonEmits);
 
 // const slots = defineSlots<ButtonSlots>();//defineSlots要3.3才支持

@@ -1,16 +1,18 @@
-import { series } from 'gulp';
+import { dest, series, src } from 'gulp';
+import path from 'path';
 
 import { withTaskName } from './utils/withTaskName';
 import { run } from './utils/run';
-import { componentsPath } from './utils/paths';
-
-// import { componentsPath } from './utils/paths';
+import { componentsPath, outDir } from './utils/paths';
 
 export function buildComponent(dirname: string, name: string) {
+  const output = path.resolve(dirname, './dist/**');
   return series(
-    withTaskName('build:component', () => {
-      console.log(`打包组件:${dirname}---${name}`);
-      run(`pnpm run build`, componentsPath);
+    withTaskName('build:component', async () => {
+      await run(`vite build`, componentsPath);
+    }),
+    withTaskName('copy:component', async () => {
+      return src(output).pipe(dest(path.resolve(outDir, name)));
     })
   );
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { AddCircle } from '@vicons/ionicons5';
-import { Key, TreeOption } from '@vue-ui-store/components/tree/src/tree';
+import { Key, TreeOption } from '@vue-ui-store/components/src/tree/src/tree';
 
 import formPlay from '@/components/form-play.vue';
 import uploadPlay from '@/components/upload-play.vue';

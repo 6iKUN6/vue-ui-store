@@ -16,21 +16,6 @@ function compile() {
     .pipe(dest('./dist/css'));
 }
 
-// function compileCommon() {
-//   const sass = gulpSass(dartSass);
-//   return src(path.resolve(__dirname, './src/common/**'))
-//     .pipe(sass.sync())
-//     .pipe(autoprefixer())
-//     .pipe(cleanCss())
-//     .pipe(dest('./dist/common'));
-// }
-
-// function copyCommon() {
-//   return src(path.resolve(__dirname, './src/common/**'))
-//     .pipe(cleanCss())
-//     .pipe(dest('./dist/common'));
-// }
-
 function copyfullStyle() {
   return src(path.resolve(__dirname, './dist/**')).pipe(
     dest(path.resolve(__dirname, '../../dist/theme-chalk'))

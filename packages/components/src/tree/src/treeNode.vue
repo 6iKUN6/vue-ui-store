@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { createNamespace } from '@vue-ui-store/utils/create';
-import SpIcon from '@vue-ui-store/components/icon';
-import SpCheckbox from '@vue-ui-store/components/checkbox';
-import Switcher from '@vue-ui-store/components/internal-icon/Switcher';
-import Loading from '@vue-ui-store/components/internal-icon/Loading';
+import SpIcon from '@vue-ui-store/components/src/icon';
+import SpCheckbox from '@vue-ui-store/components/src/checkbox';
+import Switcher from '@vue-ui-store/components/src/internal-icon/Switcher';
+import Loading from '@vue-ui-store/components/src/internal-icon/Loading';
 
 import SpTreeNodeContent from './tree-node-content';
 import { treeNodeEmits, treeNodeProps } from './tree';
