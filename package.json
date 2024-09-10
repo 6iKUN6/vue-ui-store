@@ -14,7 +14,7 @@
     "lint-staged": "lint-staged",
     "format": "prettier --write .",
     "release": "release-it",
-    "commit": "git-cz",
+    "commit": "git add . && git-cz",
     "publish": "gulp -f scripts/publish.ts",
     "prepare": "husky install"
   },
