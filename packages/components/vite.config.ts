@@ -1,40 +1,44 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import jsx from '@vitejs/plugin-vue-jsx';
 import dts from 'vite-plugin-dts';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 export default defineConfig({
   build: {
-    //minify: false,
     rollupOptions: {
       external: ['vue', 'async-validator', 'dayjs'],
       input: ['index.ts'],
       output: [
         {
           format: 'es',
-          entryFileNames: '[name].mjs',
-          // preserveModules: true,
           exports: 'named',
-          dir: './dist/es'
+          dir: './dist/es',
+          entryFileNames: '[name].es.js' // 指定入口文件名模板
         },
         {
-          format: 'cjs',
-          entryFileNames: '[name].js',
-          // preserveModules: true,
+          format: 'umd',
+          name: 'SpUI',
           exports: 'named',
-          dir: './dist/lib'
+          dir: './dist/umd',
+          globals: {
+            vue: 'Vue'
+          },
+          entryFileNames: '[name].umd.js' // 指定入口文件名模板
         }
       ]
     },
     lib: {
       entry: './index.ts',
-      name: 'sp-ui'
+      name: 'sp-ui',
+      fileName: format => `sp-ui.${format}.js` // 指定库文件名
     }
   },
   plugins: [
     vue(),
+    jsx(),
     dts({
       entryRoot: 'src',
-      outDir: ['./dist/es/src', './dist/lib/src'],
+      outDir: ['./dist/es/src', './dist/umd/src'],
       tsconfigPath: '../../tsconfig.json'
     }),
     DefineOptions(),

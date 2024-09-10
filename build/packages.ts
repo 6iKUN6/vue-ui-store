@@ -15,7 +15,6 @@ export const buildPackages = (dirname: string, name: string) => {
     return series(
       withTaskName(`build-${module}:${dirname}`, () => {
         const tsConfig = path.resolve(projectRoot, 'tsconfig.json');
-        console.log('----tsConfig----', tsConfig);
         const inputs = ['./*.ts', '!gulpfile.ts', '!node_modules'];
         return src(inputs)
           .pipe(

@@ -8,5 +8,3 @@ export const delpathTask = withTaskName('clean', async () => delPath());
 export const buildAllPackageTask = withTaskName('buildAllPackages', () =>
   run('pnpm run --filter ./packages/* --parallel build', projectRoot)
 );
-
-// export const buildComponentTask = withTaskName('buildComponent', () => run(''));
