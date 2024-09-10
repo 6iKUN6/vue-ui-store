@@ -18,3 +18,23 @@ export {
   Icon,
   Calendar
 };
+
+const components = [
+  Button,
+  Input,
+  VirtualScrollList,
+  Checkbox,
+  Tree,
+  Form,
+  FormItem,
+  Icon,
+  Calendar
+];
+
+const install = (app: any) => {
+  components.forEach(component => {
+    component.install?.(app);
+  });
+};
+
+export { install };

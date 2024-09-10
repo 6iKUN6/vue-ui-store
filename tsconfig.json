@@ -25,5 +25,9 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "**/__tests__", "dist/**"]
+  "exclude": [
+    "node_modules",
+    "**/__tests__",
+    "dist/**"
+  ]
 }

@@ -15,13 +15,16 @@ export const buildPackages = (dirname: string, name: string) => {
     return series(
       withTaskName(`build-${module}:${dirname}`, () => {
         const tsConfig = path.resolve(projectRoot, 'tsconfig.json');
+        console.log('----tsConfig----', tsConfig);
         const inputs = ['./*.ts', '!gulpfile.ts', '!node_modules'];
         return src(inputs)
           .pipe(
             ts.createProject(tsConfig, {
               declaration: true, //生成配置文件
               strict: false,
-              module: config.module
+              module: config.module,
+              noEmit: false,
+              allowImportingTsExtensions: false
             })()
           )
           .pipe(dest(output));

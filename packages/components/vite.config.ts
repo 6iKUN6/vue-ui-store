@@ -28,7 +28,6 @@ export default defineConfig({
     lib: {
       entry: './index.ts',
       name: 'sp-ui'
-      // formats: ['es', 'umd']
     }
   },
   plugins: [
@@ -36,7 +35,7 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       outDir: ['./dist/es/src', './dist/lib/src'],
-      tsconfigPath: '../../tsconfig.json' //全局tsconf
+      tsconfigPath: '../../tsconfig.json'
     }),
     DefineOptions(),
     {
