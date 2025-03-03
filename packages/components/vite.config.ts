@@ -3,43 +3,63 @@ import vue from '@vitejs/plugin-vue';
 import jsx from '@vitejs/plugin-vue-jsx';
 import dts from 'vite-plugin-dts';
 import DefineOptions from 'unplugin-vue-define-options/vite';
+
+// // 自动获取所有组件入口
+// const componentEntries = glob
+//   .sync('**/index.ts', {
+//     ignore: ['node_modules/**', 'dist/**', 'gulpfile.ts', 'vite.config.ts']
+//   })
+//   .map(file => resolve(__dirname, file));
+
 export default defineConfig({
   build: {
     rollupOptions: {
-      external: ['vue', 'async-validator', 'dayjs'],
+      external: [
+        'vue',
+        'async-validator',
+        'dayjs',
+        '@sp-ui/utils',
+        '@sp-ui/theme-chalk'
+      ],
       input: ['index.ts'],
       output: [
         {
           format: 'es',
           exports: 'named',
           dir: './dist/es',
-          entryFileNames: '[name].es.js' // 指定入口文件名模板
+          preserveModules: true,
+          inlineDynamicImports: false,
+          preserveModulesRoot: '.',
+          entryFileNames: '[name].mjs'
+          // chunkFileNames: '[name]/[name]-[hash].mjs',
+          // assetFileNames: '[name]/[name][extname]'
         },
         {
-          format: 'umd',
-          name: 'SpUI',
+          format: 'cjs',
           exports: 'named',
-          dir: './dist/umd',
-          globals: {
-            vue: 'Vue'
-          },
-          entryFileNames: '[name].umd.js' // 指定入口文件名模板
+          dir: './dist/cjs',
+          entryFileNames: '[name].js',
+          preserveModules: true,
+          preserveModulesRoot: '.',
+          inlineDynamicImports: false
         }
       ]
     },
     lib: {
       entry: './index.ts',
       name: 'sp-ui',
-      fileName: format => `sp-ui.${format}.js` // 指定库文件名
+      formats: ['es', 'cjs'],
+      fileName: format => `index.${format}.js` // 指定库文件名
     }
   },
   plugins: [
     vue(),
     jsx(),
     dts({
-      entryRoot: 'src',
-      outDir: ['./dist/es/src', './dist/umd/src'],
-      tsconfigPath: '../../tsconfig.json'
+      entryRoot: './',
+      outDir: ['./dist/es'],
+      tsconfigPath: '../../tsconfig.json',
+      exclude: ['node_modules', 'dist', 'gulpfile.ts', 'vite.config.ts']
     }),
     DefineOptions(),
     {

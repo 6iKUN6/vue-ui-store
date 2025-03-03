@@ -7,7 +7,7 @@ export const buildConfig = {
     format: 'esm',
     output: {
       name: 'es',
-      path: path.resolve(outDir, 'es')
+      path: path.resolve(outDir, 'dist/es')
     },
     bundle: {
       path: 'sp-ui/es'
@@ -18,7 +18,7 @@ export const buildConfig = {
     format: 'cjs',
     output: {
       name: 'lib',
-      path: path.resolve(outDir, 'lib')
+      path: path.resolve(outDir, 'dist/lib')
     },
     bundle: {
       path: 'sp-ui/lib'

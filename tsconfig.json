@@ -5,7 +5,7 @@
     "noImplicitAny": true, //支持类型不标注可以默认any
     "removeComments": true, //删除注释
     "moduleResolution": "node", //按照node模块来解析
-    "esModuleInterop": true,
+    "esModuleInterop": true, //支持es模块
     "jsx": "preserve", //jsx不转
     "jsxImportSource": "vue",
     "noLib": false,

@@ -1,12 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+// import { useRouter } from 'vue-router';
 import { AddCircle } from '@vicons/ionicons5';
-import { Key, TreeOption } from '@sp-ui/components/src/tree/src/tree';
+import { Key, TreeOption } from '@sp-ui/components/tree/src/tree';
+import { useRouter } from 'vue-router';
+import { checkVersion } from '@sp-ui/plugins/src/checkVersionPlugin/checkVersion';
 
 import formPlay from '@/components/form-play.vue';
 import uploadPlay from '@/components/upload-play.vue';
 // import calendarPlay from '@/components/calendar-play.vue';
 import vslPlay from '@/components/vsl-play.vue';
+
+const router = useRouter();
+
+router.afterEach(() => {
+  checkVersion();
+});
 
 function createData(level = 4, parenKey = ''): any {
   if (!level) return [];

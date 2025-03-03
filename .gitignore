@@ -1,7 +1,8 @@
 node_modules
 dist
-packages/theme-chalk/dist
 packages/components/dist
-packages/utils/es
-packages/utils/lib
+packages/plugins/dist
+packages/theme-chalk/dist
+packages/utils/dist
+
 docs/.vitepress
