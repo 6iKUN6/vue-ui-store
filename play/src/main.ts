@@ -8,6 +8,7 @@ import { FormItem, Form } from '@sp-ui/components/form';
 import Upload from '@sp-ui/components/upload';
 import Calendar from '@sp-ui/components/calendar';
 import VirtualScrollList from '@sp-ui/components/virtual-scroll-list';
+// import SPUI from '@sp-ui/components';
 
 import App from './App.vue';
 import router from './router';
@@ -31,5 +32,5 @@ const plugins = [
 const app = createApp(App);
 app.use(router);
 plugins.forEach(plugin => app.use(plugin)); //global install
-
+// app.use(SPUI);
 app.mount('#app');

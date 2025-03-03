@@ -1,3 +1,5 @@
+import { App } from 'vue';
+
 import Button from './button';
 import Input from './input';
 import VirtualScrollList from './virtual-list';
@@ -7,6 +9,20 @@ import { Form, FormItem } from './form';
 import Icon from './icon';
 import Calendar from './calendar';
 import Upload from './upload';
+
+export interface SPUIComponents {
+  install: (app: App) => void;
+  Button: typeof Button;
+  Input: typeof Input;
+  VirtualScrollList: typeof VirtualScrollList;
+  Checkbox: typeof Checkbox;
+  Tree: typeof Tree;
+  Form: typeof Form;
+  FormItem: typeof FormItem;
+  Icon: typeof Icon;
+  Calendar: typeof Calendar;
+  Upload: typeof Upload;
+}
 
 export {
   Button,
@@ -34,13 +50,26 @@ const components = [
   Upload
 ];
 
-const install = (app: any) => {
+const install = (app: App) => {
   components.forEach(component => {
     component.install?.(app);
   });
 };
 
-export { install };
+const SPUI: SPUIComponents = {
+  install,
+  Button,
+  Input,
+  VirtualScrollList,
+  Checkbox,
+  Tree,
+  Form,
+  FormItem,
+  Icon,
+  Calendar,
+  Upload
+};
+export default SPUI;
 
 // export * from './button';
 // export * from './input';
