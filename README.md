@@ -1795,6 +1795,7 @@ vue-ui-store
    └─ vue-shim.d.ts
 
 ```
+
 ```
 vue-ui-store
 ├─ .editorconfig
