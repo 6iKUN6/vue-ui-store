@@ -12,16 +12,16 @@ import Upload from './upload';
 
 export interface SPUIComponents {
   install: (app: App) => void;
-  Button: typeof Button;
-  Input: typeof Input;
-  VirtualScrollList: typeof VirtualScrollList;
-  Checkbox: typeof Checkbox;
-  Tree: typeof Tree;
-  Form: typeof Form;
-  FormItem: typeof FormItem;
-  Icon: typeof Icon;
-  Calendar: typeof Calendar;
-  Upload: typeof Upload;
+  // Button: typeof Button;
+  // Input: typeof Input;
+  // VirtualScrollList: typeof VirtualScrollList;
+  // Checkbox: typeof Checkbox;
+  // Tree: typeof Tree;
+  // Form: typeof Form;
+  // FormItem: typeof FormItem;
+  // Icon: typeof Icon;
+  // Calendar: typeof Calendar;
+  // Upload: typeof Upload;
 }
 
 export {
@@ -57,26 +57,27 @@ const install = (app: App) => {
 };
 
 const SPUI: SPUIComponents = {
-  install,
-  Button,
-  Input,
-  VirtualScrollList,
-  Checkbox,
-  Tree,
-  Form,
-  FormItem,
-  Icon,
-  Calendar,
-  Upload
+  install
+  // Button,
+  // Input,
+  // VirtualScrollList,
+  // Checkbox,
+  // Tree,
+  // Form,
+  // FormItem,
+  // Icon,
+  // Calendar,
+  // Upload
 };
+
 export default SPUI;
 
-// export * from './button';
-// export * from './input';
-// export * from './virtual-list';
-// export * from './checkbox';
-// export * from './tree';
-// export * from './form';
-// export * from './icon';
-// export * from './calendar';
-// export * from './upload';
+export * from './button';
+export * from './input';
+export * from './virtual-list';
+export * from './checkbox';
+export * from './tree';
+export * from './form';
+export * from './icon';
+export * from './calendar';
+export * from './upload';
