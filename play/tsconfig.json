@@ -10,7 +10,7 @@
   // ],
   "compilerOptions": {
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

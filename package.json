@@ -3,8 +3,10 @@
   "private": false,
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist//components/cjs/index.js",
+  "module": "./dist/components/es/index.mjs",
   "type": "module",
+  "types": "./dist/components/es/index.d.ts",
   "scripts": {
     "dev": "pnpm -C play dev",
     "build": "gulp -f build/gulpfile.ts",
@@ -16,11 +18,34 @@
     "release": "release-it",
     "commit": "git add . && git-cz",
     "publish": "gulp -f scripts/publish.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "createPkg": "gulp -f scripts/createPkg.ts"
   },
   "keywords": [
     "vue3组件库"
   ],
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./components": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./utils": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./plugins": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    }
+  },
   "author": "sparkle",
   "license": "ISC",
   "dependencies": {
@@ -46,6 +71,7 @@
     "@types/gulp-autoprefixer": "^0.0.37",
     "@types/gulp-clean-css": "^4.3.4",
     "@types/gulp-sass": "^5.0.4",
+    "@types/minimist": "^1.2.5",
     "@types/mockjs": "^1.0.10",
     "@types/node": "^22.5.1",
     "@types/sass": "^1.45.0",
@@ -72,6 +98,7 @@
     "gulp-typescript": "6.0.0-alpha.1",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
+    "minimist": "^1.2.8",
     "mockjs": "^1.1.0",
     "prettier": "^3.3.3",
     "release-it": "^17.6.0",

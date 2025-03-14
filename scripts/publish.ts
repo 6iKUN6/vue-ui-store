@@ -2,9 +2,11 @@ import { series } from 'gulp';
 
 import { distPath } from '../build/utils/paths';
 import { run } from '../build/utils/run';
+import { createPkg } from './createPkg';
+import { buildChecker } from './builtChecker';
 
 export const publish = async () => {
-  run('release-it', distPath);
+  await run('release-it', distPath);
 };
 
-export default series(publish);
+export default series(buildChecker, createPkg, publish);
