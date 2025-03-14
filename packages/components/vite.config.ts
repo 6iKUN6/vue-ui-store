@@ -24,7 +24,7 @@ export default defineConfig({
       input: ['index.ts'],
       output: [
         {
-          format: 'es',
+          format: 'esm',
           exports: 'named',
           dir: './dist/es',
           preserveModules: true,
@@ -38,7 +38,7 @@ export default defineConfig({
           format: 'cjs',
           exports: 'named',
           dir: './dist/cjs',
-          entryFileNames: '[name].js',
+          entryFileNames: '[name].cjs',
           preserveModules: true,
           preserveModulesRoot: '.',
           inlineDynamicImports: false

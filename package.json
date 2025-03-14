@@ -3,19 +3,21 @@
   "private": false,
   "version": "1.0.0",
   "description": "",
-  "main": "./dist//components/cjs/index.js",
+  "main": "./dist/components/cjs/index.cjs",
   "module": "./dist/components/es/index.mjs",
   "type": "module",
   "types": "./dist/components/es/index.d.ts",
   "scripts": {
     "dev": "pnpm -C play dev",
     "build": "gulp -f build/gulpfile.ts",
+    "build:components": "gulp -f packages/components/gulpfile.ts",
+    "build:utils": "gulp -f packages/utils/gulpfile.ts",
+    "build:plugins": "gulp -f packages/plugins/gulpfile.ts",
     "doc:dev": "pnpm -C docs dev",
     "lint": "eslint {packages/**/*,play/**/*}.{js,ts,jsx,tsx,vue}",
     "lint:fix": "eslint {packages/**/*,play/**/*}.{js,ts,jsx,tsx,vue} --fix",
     "lint-staged": "lint-staged",
     "format": "prettier --write .",
-    "release": "release-it",
     "commit": "git add . && git-cz",
     "publish": "gulp -f scripts/publish.ts",
     "prepare": "husky install",
@@ -26,25 +28,26 @@
   ],
   "exports": {
     ".": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.mjs",
-      "require": "./lib/index.js"
+      "types": "./dist/components/es/index.d.ts",
+      "import": "./dist/components/es/index.mjs",
+      "require": "./dist/components/cjs/index.cjs"
     },
     "./components": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.mjs",
-      "require": "./lib/index.js"
+      "types": "./dist/components/es/index.d.ts",
+      "import": "./dist/components/es/index.mjs",
+      "require": "./dist/components/cjs/index.cjs"
     },
     "./utils": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.js",
-      "require": "./lib/index.js"
+      "types": "./dist/utils/es/index.d.ts",
+      "import": "./dist/utils/es/index.mjs",
+      "require": "./dist/utils/lib/index.cjs"
     },
     "./plugins": {
-      "types": "./es/index.d.ts",
-      "import": "./es/index.js",
-      "require": "./lib/index.js"
-    }
+      "types": "./dist/plugins/es/index.d.ts",
+      "import": "./dist/plugins/es/index.mjs",
+      "require": "./dist/plugins/lib/index.cjs"
+    },
+    "./theme-chalk/index.css": "./dist/theme-chalk/css/index.css"
   },
   "author": "sparkle",
   "license": "ISC",
@@ -64,12 +67,19 @@
     "url": "https://github.com/6iKUN6/vue-ui-store"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.10",
     "@babel/eslint-parser": "^7.25.1",
     "@commitlint/cli": "^19.4.1",
     "@commitlint/config-conventional": "^19.4.1",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@types/gulp": "^4.0.17",
     "@types/gulp-autoprefixer": "^0.0.37",
     "@types/gulp-clean-css": "^4.3.4",
+    "@types/gulp-rename": "^2.0.6",
     "@types/gulp-sass": "^5.0.4",
     "@types/minimist": "^1.2.5",
     "@types/mockjs": "^1.0.10",
@@ -82,8 +92,10 @@
     "@vue/eslint-config-typescript": "^13.0.0",
     "async-validator": "^4.2.5",
     "commitizen": "^4.3.0",
+    "consola": "^3.4.0",
     "cz-git": "^1.9.4",
     "dayjs": "^1.11.13",
+    "esbuild": "^0.25.1",
     "eslint": "9.8.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
@@ -94,6 +106,7 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-typescript": "6.0.0-alpha.1",
     "husky": "^9.1.5",
@@ -102,6 +115,10 @@
     "mockjs": "^1.1.0",
     "prettier": "^3.3.3",
     "release-it": "^17.6.0",
+    "rollup": "^4.35.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.43.2",
     "sucrase": "^3.35.0",
     "typescript": "^5.5.4",
@@ -119,6 +136,19 @@
       "pnpm lint:fix",
       "pnpm format"
     ]
+  },
+  "release-it": {
+    "git": {
+      "commit": true,
+      "tag": true,
+      "push": false
+    },
+    "npm": {
+      "publish": true,
+      "access": "public",
+      "tag": "latest",
+      "skipChecks": true
+    }
   },
   "engines": {
     "node": ">=18",

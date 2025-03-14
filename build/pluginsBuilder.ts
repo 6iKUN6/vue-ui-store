@@ -2,6 +2,7 @@
 import { series, parallel, src, dest } from 'gulp';
 import ts from 'gulp-typescript';
 import path from 'path';
+// import rename from 'gulp-rename';
 
 import { buildConfig } from './utils/config';
 import { outDir, projectRoot } from './utils/paths';
@@ -27,17 +28,30 @@ export const buildPlugins = (dirname: string, name: string) => {
           '!node_modules',
           'src/**/*.ts'
         ];
-        return src(inputs)
-          .pipe(
-            ts.createProject(tsConfig, {
-              declaration: true, //生成配置文件
-              strict: false,
-              module: config.module,
-              noEmit: false,
-              allowImportingTsExtensions: false
-            })()
-          )
-          .pipe(dest(output));
+        return (
+          src(inputs)
+            .pipe(
+              ts.createProject(tsConfig, {
+                declaration: true, //生成配置文件
+                strict: false,
+                module: config.module,
+                noEmit: false,
+                allowImportingTsExtensions: false
+              })()
+            )
+            // .pipe(
+            //   rename(filePath => {
+            //     if (!filePath.basename.endsWith('.d')) {
+            //       filePath.extname = `.${config.ext}`;
+            //     }
+
+            //     // 保持目录结构
+            //     filePath.dirname = filePath.dirname.replace(/^src[\\/]?/, '');
+            //     return filePath;
+            //   })
+            // ) // 修改文件后缀
+            .pipe(dest(output))
+        );
       }),
       //拷贝到dist
       withTaskName(`copy:${dirname}`, () => {

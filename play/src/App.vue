@@ -4,7 +4,8 @@ import { ref } from 'vue';
 import { AddCircle } from '@vicons/ionicons5';
 import { Key, TreeOption } from '@sp-ui/components/tree/src/tree';
 import { useRouter } from 'vue-router';
-import { checkVersion } from '@sp-ui/plugins/src/checkVersionPlugin/checkVersion';
+// import { checkVersion } from '@sp-ui/plugins/src/checkVersionPlugin/checkVersion';
+// import { checkVersion } from 'sp-ui-store/plugins';
 
 import formPlay from '@/components/form-play.vue';
 import uploadPlay from '@/components/upload-play.vue';
@@ -14,7 +15,7 @@ import vslPlay from '@/components/vsl-play.vue';
 const router = useRouter();
 
 router.afterEach(() => {
-  checkVersion();
+  // checkVersion();
 });
 
 function createData(level = 4, parenKey = ''): any {

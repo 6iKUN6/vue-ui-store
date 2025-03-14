@@ -14,9 +14,9 @@ import SPUI from 'sp-ui-store';
 import App from './App.vue';
 import router from './router';
 
-// import 'sp-ui-store/index.css';
+import 'sp-ui-store/theme-chalk/index.css';
 // import '@sp-ui/theme-chalk/src/index.scss';
-import '../../dist/theme-chalk/css/index.css';
+// import '../../dist/theme-chalk/css/index.css';
 
 const plugins = [SPUI];
 

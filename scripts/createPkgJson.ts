@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { series } from 'gulp';
 
-import { outDir } from './paths';
-import rootPkgJson from '../../package.json';
+import { withTaskName } from '../build/utils/withTaskName';
+import { outDir } from '../build/utils/paths';
+import rootPkgJson from '../package.json';
 
 function createPkgJson() {
   const pkgContent = {
@@ -42,10 +44,15 @@ function createPkgJson() {
     dependencies: Object.entries(rootPkgJson.dependencies)
       .filter(([, version]) => !version.includes('workspace:'))
       .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {}),
+    'release-it': rootPkgJson['release-it'],
     sideEffects: false
   };
   const pkgPath = path.resolve(outDir, 'package.json');
   fs.writeFileSync(pkgPath, JSON.stringify(pkgContent, null, 2));
 }
 
-export default createPkgJson;
+export const createPkg = withTaskName('createPkg', async () => {
+  await createPkgJson();
+});
+
+export default series(createPkg);

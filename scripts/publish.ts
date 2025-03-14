@@ -2,7 +2,7 @@ import { series } from 'gulp';
 
 import { distPath } from '../build/utils/paths';
 import { run } from '../build/utils/run';
-import { createPkg } from './createPkg';
+import { createPkg } from './createPkgJson';
 import { buildChecker } from './builtChecker';
 
 export const publish = async () => {

@@ -5,7 +5,7 @@ import Defineoptions from 'unplugin-vue-define-options/vite';
 import jsx from '@vitejs/plugin-vue-jsx';
 // import { gitRevisionInfoPlugin } from '@sp-ui/plugins/src/checkVersionPlugin/gitRevision';
 // import eslintPlugin from 'vite-plugin-eslint';
-import {} from '../dist/plugins/lib/index.js';
+// import { gitRevisionInfoPlugin } from 'sp-ui-store/plugins';
 
 export default defineConfig(() => {
   return {
