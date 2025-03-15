@@ -1,1 +1,1 @@
-export * from './checkVersionPlugin';
+export * from './viteGenerateGitInfo';

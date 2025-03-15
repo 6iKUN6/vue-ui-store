@@ -1,3 +1,4 @@
+//只能在node环境下运行，因为用到了child_process，promisify
 import path from 'path';
 import { exec } from 'child_process';
 import { promisify } from 'util';

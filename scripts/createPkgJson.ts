@@ -26,12 +26,12 @@ function createPkgJson() {
         require: './lib/index.js'
       },
       './utils': {
-        types: './lib/index.d.ts',
+        types: './es/index.d.ts',
         import: './es/index.mjs',
         require: './lib/index.js'
       },
       './plugins': {
-        types: './lib/index.d.ts',
+        types: './es/index.d.ts',
         import: './es/index.mjs',
         require: './lib/index.js'
       }

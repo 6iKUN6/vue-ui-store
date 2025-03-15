@@ -2,13 +2,15 @@ import fs from 'fs';
 import path from 'path';
 import type { Plugin } from 'vite';
 
-import GitInfoService from './gitInfo';
-import { GIT_VAR } from './gitInfo';
+import GitInfoService from './getGitInfo';
+import { GIT_VAR } from './getGitInfo';
 
 // 确保 GIT_VAR 的类型是一个包含具体字符串的类型
 type GitVarKeys = keyof typeof GIT_VAR;
 
-export async function gitRevisionInfoPlugin(): Promise<Plugin> {
+export async function viteGitRevisionInfoPlugin(
+  apply: 'serve' | 'build' = 'build'
+): Promise<Plugin> {
   const gitInfoService = new GitInfoService();
   const gitInfo = await gitInfoService.generateGitInfo('all');
   const res = JSON.stringify(gitInfo);
@@ -28,12 +30,25 @@ export async function gitRevisionInfoPlugin(): Promise<Plugin> {
 
   return {
     name: 'git-revision-info',
-    // apply: 'build',
+    apply: apply,
     config() {
       return {
         define: {
           __GIT_REVISION_INFO__: res //挂载到全局变量上
         }
+      };
+    },
+    transformIndexHtml(html) {
+      // 为 Vite2 添加兼容性代码
+      return {
+        html,
+        tags: [
+          {
+            tag: 'script',
+            injectTo: 'head',
+            children: `window.__GIT_REVISION_INFO__ = ${res};`
+          }
+        ]
       };
     }
   };

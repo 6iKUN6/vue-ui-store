@@ -6,22 +6,31 @@ export const baseConfig: Options = {
   dts: true,
   minify: false, // 根据需要开启或关闭代码压缩
   clean: true,
-  shims: true, //注入cjs和esm shims
-  outExtension: ({ format }) => ({
-    dts: '.d.ts',
-    js: format === 'esm' ? '.mjs' : '.js'
-  })
+  // shims: true //注入cjs和esm shims
+  outExtension: ({ format }) => {
+    let jsExtension = '.js';
+    if (format === 'esm') {
+      jsExtension = '.mjs';
+    } else if (format === 'iife') {
+      jsExtension = '.global.js';
+    }
+
+    return {
+      dts: '.d.ts',
+      js: jsExtension
+    };
+  }
 };
 
 const esmConfig: Options = {
   ...baseConfig,
-  format: 'esm',
+  format: ['esm'],
   outDir: 'dist/es'
 };
 
 const cjsConfig: Options = {
   ...baseConfig,
-  format: 'cjs',
+  format: ['cjs'],
   outDir: 'dist/lib'
 };
 

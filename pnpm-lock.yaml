@@ -20,12 +20,6 @@ importers:
       '@sp-ui/utils':
         specifier: workspace:*
         version: link:packages/utils
-      axios:
-        specifier: ^1.8.1
-        version: 1.8.1
-      vue:
-        specifier: ^3.4.35
-        version: 3.4.35(typescript@5.5.4)
     devDependencies:
       '@babel/core':
         specifier: ^7.26.10
@@ -102,6 +96,9 @@ importers:
       async-validator:
         specifier: ^4.2.5
         version: 4.2.5
+      axios:
+        specifier: ^1.8.1
+        version: 1.8.1
       commitizen:
         specifier: ^4.3.0
         version: 4.3.0(@types/node@22.5.1)(typescript@5.5.4)
@@ -207,6 +204,9 @@ importers:
       vite-plugin-dts:
         specifier: ^4.1.0
         version: 4.1.0(@types/node@22.5.1)(rollup@4.35.0)(typescript@5.5.4)(vite@5.3.5(@types/node@22.5.1)(sass@1.77.8))
+      vue:
+        specifier: ^3.4.35
+        version: 3.4.35(typescript@5.5.4)
 
   docs:
     devDependencies:

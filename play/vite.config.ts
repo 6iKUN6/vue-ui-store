@@ -5,11 +5,16 @@ import Defineoptions from 'unplugin-vue-define-options/vite';
 import jsx from '@vitejs/plugin-vue-jsx';
 // import { gitRevisionInfoPlugin } from '@sp-ui/plugins/src/checkVersionPlugin/gitRevision';
 // import eslintPlugin from 'vite-plugin-eslint';
-// import { gitRevisionInfoPlugin } from 'sp-ui-store/plugins';
+import { viteGitRevisionInfoPlugin } from 'sp-ui-store/plugins';
 
 export default defineConfig(() => {
   return {
-    plugins: [vue(), Defineoptions(), jsx()],
+    plugins: [
+      vue(),
+      Defineoptions(),
+      jsx(),
+      viteGitRevisionInfoPlugin('serve')
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),

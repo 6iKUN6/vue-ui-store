@@ -22,6 +22,6 @@
       "components/*": ["./src/components/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.vue", "vite.config.ts"],
   "exclude": ["node_modules"]
 }

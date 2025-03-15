@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 // import { useRouter } from 'vue-router';
 import { AddCircle } from '@vicons/ionicons5';
 import { Key, TreeOption } from '@sp-ui/components/tree/src/tree';
 import { useRouter } from 'vue-router';
 // import { checkVersion } from '@sp-ui/plugins/src/checkVersionPlugin/checkVersion';
-// import { checkVersion } from 'sp-ui-store/plugins';
+import { sayHello } from 'sp-ui-store/utils';
 
 import formPlay from '@/components/form-play.vue';
 import uploadPlay from '@/components/upload-play.vue';
@@ -16,6 +16,9 @@ const router = useRouter();
 
 router.afterEach(() => {
   // checkVersion();
+});
+onMounted(() => {
+  sayHello();
 });
 
 function createData(level = 4, parenKey = ''): any {
