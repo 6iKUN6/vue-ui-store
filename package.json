@@ -1,7 +1,7 @@
 {
   "name": "sp-ui-store",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/components/cjs/index.cjs",
   "module": "./dist/components/es/index.mjs",
