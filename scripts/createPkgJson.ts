@@ -27,12 +27,12 @@ function createPkgJson() {
       },
       './utils': {
         types: './es/index.d.ts',
-        import: './es/index.js',
+        import: './es/index.mjs',
         require: './lib/index.js'
       },
       './plugins': {
         types: './es/index.d.ts',
-        import: './es/index.js',
+        import: './es/index.mjs',
         require: './lib/index.js'
       }
     },

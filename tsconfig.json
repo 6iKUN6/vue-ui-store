@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {},
     "module": "ESNext", //打包模块类型ESNext
     "declaration": false, //默认不要声明文件
     "noImplicitAny": true, //支持类型不标注可以默认any

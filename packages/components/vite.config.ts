@@ -46,7 +46,7 @@ export default defineConfig({
       ]
     },
     lib: {
-      entry: './index.ts',
+      entry: ['../plugins/index.ts', '../utils/index.ts'],
       name: 'sp-ui',
       formats: ['es', 'cjs'],
       fileName: format => `index.${format}.js` // 指定库文件名
