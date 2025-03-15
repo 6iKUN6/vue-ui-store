@@ -38,14 +38,14 @@
       "require": "./dist/components/cjs/index.cjs"
     },
     "./utils": {
-      "types": "./dist/utils/es/index.d.ts",
+      "types": "./dist/utils/lib/index.d.ts",
       "import": "./dist/utils/es/index.mjs",
-      "require": "./dist/utils/lib/index.cjs"
+      "require": "./dist/utils/lib/index.js"
     },
     "./plugins": {
-      "types": "./dist/plugins/es/index.d.ts",
+      "types": "./dist/plugins/lib/index.d.ts",
       "import": "./dist/plugins/es/index.mjs",
-      "require": "./dist/plugins/lib/index.cjs"
+      "require": "./dist/plugins/lib/index.js"
     },
     "./theme-chalk/index.css": "./dist/theme-chalk/css/index.css"
   },
