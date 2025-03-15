@@ -18,12 +18,12 @@ function createPkgJson() {
       '.': {
         types: './es/index.d.ts',
         import: './es/index.mjs',
-        require: './lib/index.js'
+        require: './cjs/index.js'
       },
       './components': {
         types: './es/index.d.ts',
         import: './es/index.mjs',
-        require: './lib/index.js'
+        require: './cjs/index.js'
       },
       './utils': {
         types: './es/index.d.ts',
