@@ -6,6 +6,8 @@ export const baseConfig: Options = {
   dts: true,
   minify: false, // 根据需要开启或关闭代码压缩
   clean: true,
+  splitting: true, // 代码分割，保持子模块独立
+  legacyOutput: true, // 保留传统目录结构
   // shims: true //注入cjs和esm shims
   outExtension: ({ format }) => {
     let jsExtension = '.js';
@@ -19,7 +21,8 @@ export const baseConfig: Options = {
       dts: '.d.ts',
       js: jsExtension
     };
-  }
+  },
+  external: ['axios']
 };
 
 const esmConfig: Options = {

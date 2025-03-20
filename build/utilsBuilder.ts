@@ -20,7 +20,7 @@ export const buildUtils = (pkgDir: string, pkgName: string) => {
   return parallel(
     series(
       withTaskName(`build-${pkgName}`, async () => {
-        await run(`tsup-node`, pkgDir); //utils主要是在浏览器用的，过滤掉node的模块
+        await run(`tsup`, pkgDir); //utils主要是在浏览器用的，过滤掉node的模块
       }),
       withTaskName(`copy:${pkgName}`, () => {
         return src(`${output}/**`).pipe(dest(path.resolve(outDir, pkgName)));

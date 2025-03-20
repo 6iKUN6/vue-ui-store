@@ -1,4 +1,5 @@
 import { App } from 'vue';
+// import packageJson from 'package.json';
 
 import Button from './button';
 import Input from './input';
@@ -12,6 +13,7 @@ import Upload from './upload';
 
 export interface SPUIComponents {
   install: (app: App) => void;
+  version: string;
   // Button: typeof Button;
   // Input: typeof Input;
   // VirtualScrollList: typeof VirtualScrollList;
@@ -57,7 +59,8 @@ const install = (app: App) => {
 };
 
 const SPUI: SPUIComponents = {
-  install
+  install,
+  version: '你干嘛~哎呦'
   // Button,
   // Input,
   // VirtualScrollList,

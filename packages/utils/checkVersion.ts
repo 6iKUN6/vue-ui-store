@@ -1,6 +1,3 @@
-import axios from 'axios';
-// import consola from 'consola';
-
 // 添加全局变量的类型声明
 declare global {
   interface Window {
@@ -12,15 +9,9 @@ const CURRENT_VERSION_KEY = 'current_verison';
 
 const getConfig = () => {
   return new Promise<Record<string, string>>(resolve => {
-    axios
-      .get('/config.json', {
-        params: {
-          _t: Date.now()
-        }
-      })
-      .then((res: any) => {
-        resolve(res.data);
-      });
+    fetch(`/config.json?${Date.now()}`).then((res: any) => {
+      resolve(res.data);
+    });
   });
 };
 
