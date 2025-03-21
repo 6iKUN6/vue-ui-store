@@ -15,12 +15,16 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  source: {
-    type: Object,
-    default: () => ({})
-  }
-});
+interface ItemData {
+  id: number | string;
+  name: string;
+  desc: string;
+  index: number;
+}
+
+defineProps<{
+  source: ItemData;
+}>();
 </script>
 
 <style scoped></style>

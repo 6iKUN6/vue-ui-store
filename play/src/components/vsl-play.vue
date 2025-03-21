@@ -6,7 +6,7 @@
       data-key="id"
       :keeps="30"
       :estimateSize="80"
-      :dataComponent="item"
+      :data-component="item as any"
     >
     </sp-virtual-scroll-list>
   </div>

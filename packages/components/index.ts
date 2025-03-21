@@ -3,7 +3,8 @@ import { App } from 'vue';
 
 import Button from './button';
 import Input from './input';
-import VirtualScrollList from './virtual-list';
+import VirtualList from './virtual-list';
+import VirtualScrollList from './virtual-scroll-list';
 import Checkbox from './checkbox';
 import Tree from './tree';
 import { Form, FormItem } from './form';
@@ -30,6 +31,7 @@ export {
   Button,
   Input,
   VirtualScrollList,
+  VirtualList,
   Checkbox,
   Tree,
   Form,
@@ -43,6 +45,7 @@ const components = [
   Button,
   Input,
   VirtualScrollList,
+  VirtualList,
   Checkbox,
   Tree,
   Form,

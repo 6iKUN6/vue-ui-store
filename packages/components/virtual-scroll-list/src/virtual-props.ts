@@ -29,6 +29,9 @@ export const virtualScrollProps = {
     type: [Object, Function] as PropType<
       DefineComponent<{ 0: any }, { 0: any }, any>
     >,
+    // type: Object as PropType<
+    //   DefineComponent<{ source: any; [key: string | number | symbol]: any }>
+    // >,
     require: true
   }
 } as const;
@@ -58,7 +61,7 @@ export const virtualItemProps = {
     type: [String, Number] as PropType<string | number>
   },
   source: {
-    type: Object,
+    type: Object as any,
     require: true
   },
   component: {

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { type UploadRawFile } from '@sp-ui/components';
+import { type UploadRawFile } from 'sp-ui-store';
 
 const handleBeforeUpload = (rawFile: UploadRawFile) => {
   console.log('handleBeforeUpload', rawFile);
