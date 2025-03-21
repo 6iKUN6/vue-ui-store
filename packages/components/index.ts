@@ -1,16 +1,16 @@
 import { App } from 'vue';
 // import packageJson from 'package.json';
 
-import Button from './button';
-import Input from './input';
-import VirtualList from './virtual-list';
-import VirtualScrollList from './virtual-scroll-list';
-import Checkbox from './checkbox';
-import Tree from './tree';
-import { Form, FormItem } from './form';
-import Icon from './icon';
-import Calendar from './calendar';
-import Upload from './upload';
+import SPButton from './button';
+import SPInput from './input';
+import SPVirtualList from './virtual-list';
+import SPVirtualScrollList from './virtual-scroll-list';
+import SPCheckbox from './checkbox';
+import SPTree from './tree';
+import { Form as SPForm, FormItem as SPFormItem } from './form';
+import SPIcon from './icon';
+import SPCalendar from './calendar';
+import SPUpload from './upload';
 
 export interface SPUIComponents {
   install: (app: App) => void;
@@ -28,31 +28,31 @@ export interface SPUIComponents {
 }
 
 export {
-  Button,
-  Input,
-  VirtualScrollList,
-  VirtualList,
-  Checkbox,
-  Tree,
-  Form,
-  FormItem,
-  Icon,
-  Calendar,
-  Upload
+  SPButton,
+  SPInput,
+  SPVirtualScrollList,
+  SPVirtualList,
+  SPCheckbox,
+  SPTree,
+  SPForm,
+  SPFormItem,
+  SPIcon,
+  SPCalendar,
+  SPUpload
 };
 
 const components = [
-  Button,
-  Input,
-  VirtualScrollList,
-  VirtualList,
-  Checkbox,
-  Tree,
-  Form,
-  FormItem,
-  Icon,
-  Calendar,
-  Upload
+  SPButton,
+  SPInput,
+  SPVirtualScrollList,
+  SPVirtualList,
+  SPCheckbox,
+  SPTree,
+  SPForm,
+  SPFormItem,
+  SPIcon,
+  SPCalendar,
+  SPUpload
 ];
 
 const install = (app: App) => {
