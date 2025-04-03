@@ -6,3 +6,6 @@ packages/theme-chalk/dist
 packages/utils/dist
 
 docs/.vitepress
+
+play/public/config.json
+play/dist/

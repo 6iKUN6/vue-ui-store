@@ -4,8 +4,8 @@
       class="virtual-list"
       :data-sources="items"
       data-key="id"
-      :keeps="30"
       :estimateSize="80"
+      :keeps="30"
       :data-component="item as any"
     >
     </sp-virtual-scroll-list>

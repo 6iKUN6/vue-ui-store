@@ -1,3 +1,4 @@
+// 主要颜色
 $color-primary: #409eff;
 $color-white: #ffffff;
 $color-black: #000000;
@@ -5,3 +6,56 @@ $color-success: #67c23a;
 $color-warning: #e6a23c;
 $color-danger: #f56c6c;
 $color-info: #909399;
+
+// 主题色的变体
+$color-primary-light-9: #e0e5ff;
+$color-primary-dark-2: #3a8ee6;
+
+// 背景色
+$background-color-dark: #181818;
+$background-color-light: #f5f7fa;
+$background-color-overlay: rgba(0, 0, 0, 0.5);
+$background-color-white: #ffffff;
+$background-color-black: #000000;
+
+// 文字颜色
+$text-color: #303133;
+$text-color-secondary: #606266;
+$text-color-placeholder: #909399;
+$text-color-disabled: #c0c4cc;
+$text-color-inverse: #ffffff;
+
+// 填充色
+$fill-color-light: #f5f7fa;
+$fill-color-lighter: #fafafa;
+$fill-color-dark: #303133;
+$fill-color-darker: #262626;
+
+// 边框相关
+$border-color: #dcdfe6;
+$border-color-light: #e4e7ed;
+$border-color-lighter: #ebeef5;
+$border-color-hover: #c0c4cc;
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+
+// 组件尺寸
+$component-size-large: 40px;
+$component-size-default: 32px;
+$component-size-small: 24px;
+
+// 字体大小
+$font-size-large: 16px;
+$font-size-medium: 14px;
+$font-size-base: 14px;
+$font-size-small: 12px;
+
+// 动画
+$transition-duration: 0.3s;
+$transition-timing-function: ease;
+$transition-delay: 0s;
+$transition-property: all;
+
+// 阴影
+$box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-base: 0 4px 12px rgba(0, 0, 0, 0.1);

@@ -58,7 +58,7 @@ const state = reactive({ username: '', password: '' });
 
 const form = ref();
 const btn = () => {
-  form.value.validate((valid, errors) => {
+  form.value.validate((valid: boolean, errors: any) => {
     console.log('valid', valid);
     console.log('errors', errors);
   });

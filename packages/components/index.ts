@@ -11,6 +11,7 @@ import { Form as SPForm, FormItem as SPFormItem } from './form';
 import SPIcon from './icon';
 import SPCalendar from './calendar';
 import SPUpload from './upload';
+import SPColorPicker from './color-picker';
 
 export interface SPUIComponents {
   install: (app: App) => void;
@@ -38,7 +39,8 @@ export {
   SPFormItem,
   SPIcon,
   SPCalendar,
-  SPUpload
+  SPUpload,
+  SPColorPicker
 };
 
 const components = [
@@ -52,7 +54,8 @@ const components = [
   SPFormItem,
   SPIcon,
   SPCalendar,
-  SPUpload
+  SPUpload,
+  SPColorPicker
 ];
 
 const install = (app: App) => {
@@ -87,3 +90,4 @@ export * from './form';
 export * from './icon';
 export * from './calendar';
 export * from './upload';
+export * from './color-picker';

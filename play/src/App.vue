@@ -11,6 +11,7 @@ import formPlay from '@/components/form-play.vue';
 import uploadPlay from '@/components/upload-play.vue';
 // import calendarPlay from '@/components/calendar-play.vue';
 import vslPlay from '@/components/vsl-play.vue';
+import colorPickerPlay from '@/components/color-picker.vue';
 
 const router = useRouter();
 
@@ -115,6 +116,7 @@ const inpV = ref<string>('');
 </script>
 
 <template>
+  <color-picker-play style="margin-top: 20px"></color-picker-play>
   <div>{{ value }}</div>
   <sp-icon :color="'red'" :size="20">
     <AddCircle />
