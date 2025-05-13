@@ -1,5 +1,5 @@
-# 代码检查
-name: Lint
+# 自动化测试ci
+name: Test
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
   workflow_dispatch: # 允许手动触发
 
 jobs:
-  lint:
-    name: Code Quality Check
+  test:
+    name: 单元测试
     runs-on: ubuntu-latest
 
     steps:
@@ -30,11 +30,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run ESLint
-        run: pnpm lint
+      - name: Install test coverage dependencies
+        run: pnpm add -D @vitest/coverage-v8
 
-      - name: Check formatting
-        run: pnpm format
+      - name: Run tests
+        run: pnpm test
 
-      - name: Check Types
-        run: pnpm exec tsc --noEmit
+      - name: Run tests with coverage
+        run: pnpm test:coverage
+
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7

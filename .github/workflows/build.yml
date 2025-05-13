@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Components
+    name: 打包组件
     runs-on: ubuntu-latest
 
     steps:
@@ -42,7 +42,7 @@ jobs:
         run: pnpm build
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: dist
           path: dist/
