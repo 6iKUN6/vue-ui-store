@@ -41,9 +41,10 @@ jobs:
       - name: Build all
         run: pnpm build
 
+      # 上传保存打包的文件
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
-          retention-days: 7
+          retention-days: 7 # 保留 7 天
