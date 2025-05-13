@@ -31,7 +31,7 @@ jobs:
         run: pnpm install
 
       - name: Install test coverage dependencies
-        run: pnpm add -D @vitest/coverage-v8
+        run: pnpm add -D @vitest/coverage-v8 -w
 
       - name: Run tests
         run: pnpm test
