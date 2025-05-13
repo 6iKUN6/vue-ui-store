@@ -12,8 +12,8 @@
 
 @include b(button) {
   // BEM规范
-  align-items: center;
   display: inline-flex;
+  align-items: center;
   cursor: pointer;
   outline: none;
   border: #fafafa;
@@ -33,6 +33,19 @@
 
   @include m('right') {
     flex-direction: row-reverse;
+  }
+
+  @include e(icon) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    @include m('left') {
+      margin-right: 8px;
+    }
+    @include m('right') {
+      margin-left: 8px;
+    }
   }
 
   @include m(tiny) {
@@ -59,6 +72,15 @@
 
   @include when(round) {
     border-radius: 20px;
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+
+    .loading {
+      animation: rotate 1.5s linear infinite;
+    }
   }
 
   @include m(primary) {

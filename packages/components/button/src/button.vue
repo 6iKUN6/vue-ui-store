@@ -14,14 +14,14 @@
     @click="emitClick"
     @mousedown="emitMousedown"
   >
-    <template :class="[bem.e(`${iconPlacement}-icon`)]">
+    <span :class="[bem.e('icon'), bem.me('icon', iconPlacement)]">
       <sp-icon>
-        <LoadingComp v-if="loading" />
+        <LoadingIcon v-if="loading" />
         <template v-else-if="slots.icon">
           <component :is="slots.icon"></component>
         </template>
       </sp-icon>
-    </template>
+    </span>
     <slot></slot>
   </button>
 </template>
@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { useSlots } from 'vue';
 import { createNamespace } from '@sp-ui/utils/create';
-import LoadingComp from '@sp-ui/components/internal-icon/Loading';
+import LoadingIcon from '@sp-ui/components/internal-icon/Loading';
 import SpIcon from '@sp-ui/components/icon';
 
 import { buttonEmits, buttonProps } from './button';

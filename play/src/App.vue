@@ -135,7 +135,7 @@ const inpV = ref<string>('');
       {{ `${node.key}-${node.label}` }}
     </template>
   </sp-tree>
-  <sp-button size="medium" type="primary" round icon-placement="left">
+  <sp-button size="medium" type="primary" round icon-placement="right">
     按钮
     <template #icon>
       <sp-icon>
@@ -143,7 +143,7 @@ const inpV = ref<string>('');
       </sp-icon>
     </template>
   </sp-button>
-
+  <sp-button loading type="primary">loading</sp-button>
   <!-- 输入框 -->
   <div>{{ `input-value:${inpV}` }}</div>
   <sp-input v-model="inpV" :show-password="true" :clearable="true">

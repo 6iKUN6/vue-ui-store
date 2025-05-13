@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import SpColorPicker from '@sp-ui/components/color-picker';
-import '@sp-ui/theme-chalk/src/color-picker.scss';
+// import '@sp-ui/theme-chalk/src/color-picker.scss';
 
 const color1 = ref('#409EFF');
 const color2 = ref('#67C23A');
