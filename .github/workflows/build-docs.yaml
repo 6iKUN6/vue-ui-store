@@ -1,0 +1,12 @@
+# 文档构建ci
+# name: Build-Docs
+
+# on:
+#   push:
+#     branches: [main, master]
+#   pull_request:
+#     branches: [main, master]
+#   workflow_dispatch: # 允许手动触发
+
+# jobs:
+#   build-docs:
