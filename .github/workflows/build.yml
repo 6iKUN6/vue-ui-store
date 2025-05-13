@@ -1,5 +1,4 @@
-# 自动化测试ci
-name: Test
+name: Build
 
 on:
   push:
@@ -9,8 +8,8 @@ on:
   workflow_dispatch: # 允许手动触发
 
 jobs:
-  test:
-    name: Unit Tests
+  build:
+    name: 打包组件
     runs-on: ubuntu-latest
 
     steps:
@@ -30,18 +29,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install test coverage dependencies
-        run: pnpm add -D @vitest/coverage-v8
+      - name: Build components
+        run: pnpm build:components
 
-      - name: Run tests
-        run: pnpm test
+      - name: Build utils
+        run: pnpm build:utils
 
-      - name: Run tests with coverage
-        run: pnpm test:coverage
+      - name: Build plugins
+        run: pnpm build:plugins
 
-      - name: Upload coverage reports
-        uses: actions/upload-artifact@v3
+      - name: Build all
+        run: pnpm build
+
+      # 上传保存打包的文件
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
-          path: coverage/
-          retention-days: 7
+          name: dist
+          path: dist/
+          retention-days: 7 # 保留 7 天

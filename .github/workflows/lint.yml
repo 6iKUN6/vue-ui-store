@@ -10,7 +10,7 @@ on:
 
 jobs:
   lint:
-    name: Code Quality Check
+    name: 代码检查
     runs-on: ubuntu-latest
 
     steps:
