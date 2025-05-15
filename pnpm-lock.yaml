@@ -212,6 +212,9 @@ importers:
       '@vicons/ionicons5':
         specifier: ^0.12.0
         version: 0.12.0
+      sp-ui-store:
+        specifier: ../
+        version: link:..
       vue:
         specifier: ^3.4.31
         version: 3.4.35(typescript@5.5.4)

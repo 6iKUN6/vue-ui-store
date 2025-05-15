@@ -50,7 +50,8 @@
       "import": "./dist/plugins/es/index.mjs",
       "require": "./dist/plugins/lib/index.js"
     },
-    "./theme-chalk/index.css": "./dist/theme-chalk/css/index.css"
+    "./theme-chalk/index.css": "./dist/theme-chalk/css/index.css",
+    "./*": "./*"
   },
   "author": "sparkle",
   "license": "ISC",

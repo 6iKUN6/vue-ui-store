@@ -8,8 +8,8 @@ import { createApp } from 'vue';
 // import Upload from '@sp-ui/components/upload';
 // import Calendar from '@sp-ui/components/calendar';
 // import VirtualScrollList from '@sp-ui/components/virtual-scroll-list';
-import SPUI from '@sp-ui/components';
-// import SPUI from 'sp-ui-store';
+// import SPUI from '@sp-ui/components';
+import SPUI from 'sp-ui-store';
 
 import App from './App.vue';
 import router from './router';

@@ -19,15 +19,8 @@ export default defineConfig(() => {
       alias: {
         '@': path.resolve(__dirname, './src'),
         components: path.resolve(__dirname, './src/components')
-        // 指向打包后的产物
-        // '@sp-ui/components': path.resolve(
-        //   __dirname,
-        //   '../packages/components/dist'
-        // ),
-        // '@sp-ui/theme-chalk': path.resolve(
-        //   __dirname,
-        //   '../packages/theme-chalk/dist'
-        // )
+        // 'sp-ui-store': path.resolve(__dirname, '../dist')
+        // 'sp-ui-store': path.resolve(__dirname, '../')
       },
       extensions: ['.js', '.ts', '.jsx', '.tsx', '.vue']
     }
