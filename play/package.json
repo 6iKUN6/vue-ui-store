@@ -12,7 +12,7 @@
     "@vicons/ionicons5": "^0.12.0",
     "vue": "^3.4.31",
     "vue-router": "4",
-    "sp-ui-store": "../"
+    "sp-ui-store": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
